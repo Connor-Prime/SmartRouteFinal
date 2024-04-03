@@ -120,7 +120,6 @@ new Promise((resolve, reject)=>{
   }
   return (
     <div>
-      <NavBar/>
     <div style={{borderRadius: '10%'}}>
           <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro&libraries=places"></script>
           <h5 className="topText" style={{fontSize:"1.5em"}}>Mix and match stops -

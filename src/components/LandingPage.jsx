@@ -15,7 +15,7 @@ const LandingPage = () => {
       <div className="whiteBackground"></div>
       <div className="centered-content">
         
-        <img src="/public/welcome 8.svg" alt="Smart Route Logo" className="logo" />
+        <img src="/welcome 8.svg" alt="Smart Route Logo" className="logo" />
         <div style={{marginTop:"30px"}}>
           <Button variant="success" className="mt-5 proceed-button" onClick={handleProceed}>Let's Go!</Button>
 
