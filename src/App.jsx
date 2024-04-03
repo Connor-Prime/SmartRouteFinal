@@ -18,8 +18,7 @@ import MapSpaceOld from "./components/MapSpaceOld"
 import DirectionsList from './components/DirectionList';
 import Footer from './components/Footer'
 import InputStops from './components/Input/InputStops';
-import EditRoute from './components/Input/EditRoute';
-import EditRoute3 from './components/Input/EditRoute3';
+import InputStopsFIrst from './components/Input/InputStopsFirst';
 
 export default function App() {
   const [showNavBar, setshowNavBar] = useState(true)
@@ -42,13 +41,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Container sx={{ minHeight: '100vh' }}>
-        {showNavBar && <NavBar />}
+        {/* {showNavBar && <NavBar />} */}
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path='/mapspace' element={<MapSpace />}/>
           <Route path='/editroute' element={<InputStops onResponseChange={handleResponsesChange} />}/>
           <Route path='/directionslist' element={<DirectionsList />}/>
-          <Route path='/createroute' element={<InputStops onResponseChange={handleResponsesChange} />}/>
+          <Route path='/createroute' element={<InputStopsFIrst onResponseChange={handleResponsesChange} />}/>
           <Route path='/directions' element={<Directions />}/>
           <Route path='/tabinputbutton' element={<TabInputButton />}/>
           <Route path='/locationsearch' element={<LocationSearch />}/>

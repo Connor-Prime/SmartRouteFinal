@@ -12,14 +12,16 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
+      <div className="whiteBackground"></div>
       <div className="centered-content">
         
         <img src="/public/welcome 8.svg" alt="Smart Route Logo" className="logo" />
-        
-        <Button variant="success" className="mt-5 proceed-button" onClick={handleProceed}>Let's Go!</Button>
+        <div style={{marginTop:"30px"}}>
+          <Button variant="success" className="mt-5 proceed-button" onClick={handleProceed}>Let's Go!</Button>
 
-        <p style={{ fontSize: 'x-small', textAlign: 'bottom' }}>&copy; 2024 SmartRoute W.C.C.C all rights reserved</p>
+          <p style={{ fontSize: 'x-small', textAlign: 'bottom' }}>&copy; 2024 SmartRoute W.C.C.C all rights reserved</p>
 
+        </div>
       </div>
     </div>
   );

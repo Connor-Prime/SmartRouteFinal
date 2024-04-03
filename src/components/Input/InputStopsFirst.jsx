@@ -12,7 +12,7 @@ import { wait } from "../../scripts/utils";
 import Autocomplete from "react-google-autocomplete";
 import NavBar from "../navbar";
 
-const InputStops = () => {
+const InputStopsFIrst = () => {
  
   const waypoints = JSON.parse(sessionStorage.getItem('waypoints'));
   console.log(waypoints)
@@ -123,8 +123,7 @@ new Promise((resolve, reject)=>{
       <NavBar/>
     <div style={{borderRadius: '10%'}}>
           <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro&libraries=places"></script>
-          <h5 className="topText" style={{fontSize:"2em"}}>Edit Route </h5>
-          <h5 className="topText" style={{fontSize:"1.2em"}}>Mix and match stops -
+          <h5 className="topText" style={{fontSize:"1.5em"}}>Mix and match stops -
             <br></br>
           We'll map the smartest route.
           </h5>
@@ -143,14 +142,13 @@ new Promise((resolve, reject)=>{
             className="w-100"
             type="text"
             placeholder="Starting Point"
-            value={(startpoint==null)?null:startpoint}
             onChange={(e) => {setStart(e.target.value), document.getElementById("autocompleteStart").value=e.target.value}}
           />
           <Autocomplete id="autocompleteStart"
 
             hidden={false}
             style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:"1em",width:"90%",borderColor:"black", backgroundColor:"#FFFFFF",zIndex:"5"}}
-            placeholder={(startpoint==null)?"Start Point":startpoint}
+            placeholder="Start Point"
             className="autocomplete"
             apiKey={"AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro"}
             onPlaceSelected={(place) => {
@@ -182,7 +180,7 @@ new Promise((resolve, reject)=>{
               style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:"1em",width:"90%",borderColor:"black", backgroundColor:"#FFFFFF",zIndex:"5"}}
               className="autocomplete"
               apiKey={"AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro"}
-              placeholder={(field.value=="")?null:field.value}
+              placeholder="Add Stop"
               onPlaceSelected={(place) => {
               console.log(place)
               document.getElementById(`stop${index}`).value=place.formatted_address;
@@ -216,7 +214,7 @@ new Promise((resolve, reject)=>{
 );
 };
 
-export default InputStops;
+export default InputStopsFIrst;
 
 
 //MOVE TO OWN JSX ELEMENT

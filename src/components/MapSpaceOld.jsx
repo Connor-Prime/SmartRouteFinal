@@ -13,6 +13,7 @@ import Footer from './Footer'
 // import NavBar from "./navbar"
 // import GoogleMapsLink from './Mapping/GoogleMapsLink'
 import { stringArraytoWaypoint, replaceSpace } from '../scripts/waypointFromString'
+import NavBar from './navbar'
 // import ErrorBoundary from './ErrorBoundary'
 
 export default function DirectionMapSpace( {routes} ) {
@@ -22,20 +23,24 @@ export default function DirectionMapSpace( {routes} ) {
     // AIzaSyAR-r8GJmwcm-9s2gqKkKHa3K4Km145a7Q'
 
     return (
-      <div style={{height: '80vh', width: "100%"}}>
-        <APIProvider apiKey='AIzaSyAR-r8GJmwcm-9s2gqKkKHa3K4Km145a7Q'
-        >
+      <div>
+        <NavBar/>
+        <div style={{height: '80vh', width: "100%"}}>
+              <APIProvider apiKey='AIzaSyAR-r8GJmwcm-9s2gqKkKHa3K4Km145a7Q'
+              >
 
-          <Map >
-             
-            <Directions />
-           
-            </Map>
+                <Map >
+                  
+                  <Directions />
+                
+                  </Map>
 
-          
-        </APIProvider> 
-        <Footer /> 
+                
+              </APIProvider> 
+              <Footer /> 
+            </div>
       </div>
+    
     )
 
 }

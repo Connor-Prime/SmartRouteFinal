@@ -150,17 +150,20 @@ body {
     display: flex;
     justify-content: center; /*horizontal*/
     align-items: center; /* vertically */
+    z-index: 5;
   }
   
   /* Centered content */
   .centered-content {
     text-align: center;
+    z-index: 5;
   }
   
   /* SVG image */
   .logo {
     width: auto; 
     height: 95vh; 
+    z-index: 5;
   }
   
   .proceed-button {
@@ -176,6 +179,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    z-index:3;
   }
   
   
@@ -183,3 +187,10 @@ body {
     background-color: #F708a5; 
   }
   
+  .whiteBackground{
+    z-index: 1;
+    height: 110vh;
+    width: 100vw;
+    background-color: #ffffff;
+    position: absolute;
+  }
