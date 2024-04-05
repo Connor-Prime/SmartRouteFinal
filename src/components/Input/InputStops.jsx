@@ -196,17 +196,22 @@ new Promise((resolve, reject)=>{
             <input style={{width:"1.5em",height:"1.5em"}}  type="checkbox" onClick={(e)=>{toggleAutoComplete(e.target.checked,`autocomplete${index}`,`stop${index}`); console.log(e.target.checked)}}></input><h5>Autocomplete</h5>
           </div> */}
             </FloatingLabel>
-            <Button className="ms-2" variant="outline-danger" style={{backgroundColor:"#F708a5",color:"white"}} size="lg" onClick={() => removeField(index)}>
-              -
-            </Button>
+            {(index>1)?
+             <Button className="ms-2" variant="outline-danger" style={{backgroundColor:"#F708a5",color:"white"}} size="lg" onClick={() => removeField(index)}>
+             -
+           </Button>:null
+            }
+           
           </div>
         ))
         }
         {/* {initAutocompleteAllFields(fields)} */}
+        {(fields.length<5)?
         <div className="mt-3 mb-1 me-5 d-flex justify-content-end">
           <Button variant="primary" className="btnsize addform"  onClick={addField}>+
           </Button>
-        </div>
+        </div>:null
+        }
         <div className="mb-5 pb-5 d-flex justify-content-center">
           <Button className="my-4" variant="success" style={{borderRadius:".5em",fontSize:"1.5em"}} onClick={handleFormSubmit}>Generate Smart Route</Button>
         </div>

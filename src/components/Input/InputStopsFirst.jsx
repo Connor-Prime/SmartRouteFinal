@@ -17,7 +17,7 @@ const InputStopsFIrst = () => {
   const waypoints = JSON.parse(sessionStorage.getItem('waypoints'));
   console.log(waypoints)
   let startpoint=sessionStorage.getItem("startPoint");
-  const [fields, setFields] = useState((waypoints!=null)?waypoints.map((waypoint) => ({ value: waypoint })):[{ value:""}]);
+  const [fields, setFields] = useState((waypoints!=null)?waypoints.map((waypoint) => ({ value: waypoint })):[{ value:""},{value:""}]);
   console.log(startpoint);
   const [start, setStart] = useState((startpoint==null)?"":startpoint);
   const [loading, setLoading] = useState(false)
@@ -176,7 +176,7 @@ new Promise((resolve, reject)=>{
               />
             <Autocomplete id={`autocomplete${index}`}
               onChange={(e) => {handleChange(index, e.target.value); }}
-              style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:"1em",width:"90%",borderColor:"black", backgroundColor:"#FFFFFF",zIndex:"5"}}
+              style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:"1em",width:"80vw",borderColor:"black", backgroundColor:"#FFFFFF",zIndex:"5"}}
               className="autocomplete"
               apiKey={import.meta.env.VITE_api_key}
               placeholder="Add Stop"
@@ -193,17 +193,20 @@ new Promise((resolve, reject)=>{
             <input style={{width:"1.5em",height:"1.5em"}}  type="checkbox" onClick={(e)=>{toggleAutoComplete(e.target.checked,`autocomplete${index}`,`stop${index}`); console.log(e.target.checked)}}></input><h5>Autocomplete</h5>
           </div> */}
             </FloatingLabel>
-            <Button className="ms-2" variant="outline-danger" style={{backgroundColor:"#F708a5",color:"white"}} size="lg" onClick={() => removeField(index)}>
-              -
-            </Button>
+            {(index>1)?
+             <Button className="ms-2" variant="outline-danger" style={{backgroundColor:"#F708a5",color:"white"}} size="lg" onClick={() => removeField(index)}>
+             -
+           </Button>:null
+            }
           </div>
         ))
         }
-        {/* {initAutocompleteAllFields(fields)} */}
-        <div className="mt-3 mb-1 me-5 d-flex justify-content-end">
+        {(fields.length<5)?<div className="mt-3 mb-1 me-5 d-flex justify-content-end">
           <Button variant="primary" className="btnsize addform"  onClick={addField}>+
           </Button>
         </div>
+        :null
+        }
         <div className="mb-5 pb-5 d-flex justify-content-center">
           <Button className="my-4" variant="success" style={{borderRadius:".5em",fontSize:"1.5em"}} onClick={handleFormSubmit}>Generate Smart Route</Button>
         </div>
