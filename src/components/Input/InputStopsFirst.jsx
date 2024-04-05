@@ -193,7 +193,7 @@ new Promise((resolve, reject)=>{
             <input style={{width:"1.5em",height:"1.5em"}}  type="checkbox" onClick={(e)=>{toggleAutoComplete(e.target.checked,`autocomplete${index}`,`stop${index}`); console.log(e.target.checked)}}></input><h5>Autocomplete</h5>
           </div> */}
             </FloatingLabel>
-            {(index>1)?
+            {(fields.length>2)?
              <Button className="ms-2" variant="outline-danger" style={{backgroundColor:"#F708a5",color:"white"}} size="lg" onClick={() => removeField(index)}>
              -
            </Button>:null
