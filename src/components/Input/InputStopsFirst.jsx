@@ -122,7 +122,7 @@ new Promise((resolve, reject)=>{
     <div>
     <div style={{borderRadius: '10%'}}>
           <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro&libraries=places"></script>
-          <h5 className="topText" style={{fontSize:"1.5em"}}>Mix and match stops -
+          <h5 className="topText" style={{fontSize:"1.5em", marginTop:"1em"}}>Mix and match stops -
             <br></br>
           We'll map the smartest route.
           </h5>

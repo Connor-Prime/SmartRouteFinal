@@ -123,7 +123,7 @@ new Promise((resolve, reject)=>{
       <NavBar/>
     <div style={{borderRadius: '10%'}}>
           <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro&libraries=places"></script>
-          <h5 className="topText" style={{fontSize:"2em"}}>Edit Route </h5>
+          <h5 className="topText" style={{fontSize:"2em", marginTop:".5em"}}>Edit Route </h5>
           <h5 className="topText" style={{fontSize:"1.2em"}}>Mix and match stops -
             <br></br>
           We'll map the smartest route.
