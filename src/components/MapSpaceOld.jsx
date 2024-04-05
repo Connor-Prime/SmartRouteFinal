@@ -18,10 +18,6 @@ import NavBar from './navbar'
 
 export default function DirectionMapSpace( {routes} ) {
 
-    // let apiKey = process.env.GOOGLE_MAPS_API_KEY1
-
-    // AIzaSyAR-r8GJmwcm-9s2gqKkKHa3K4Km145a7Q'
-
     return (
       <div>
         <NavBar/>

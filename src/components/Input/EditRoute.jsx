@@ -103,7 +103,7 @@ const EditRoute = () => {
        style={{borderRadius:".5em", outlineColor:"black",fontSize:"1.5em",padding:".5em",width:"90%",backgroundColor:"#FFFFFF"}}
         placeholder="Starting Point"
         className="autocomplete"
-        apiKey={"AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro"}
+        apiKey={import.meta.env.VITE_api_key}
         onPlaceSelected={(place) => {
           document.getElementById("start").value=place.formatted_address;
           handleChangeStart();
@@ -129,7 +129,7 @@ const EditRoute = () => {
           style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:".5em",width:"90%",borderColor:"black", backgroundColor:"#FFFFFF"}}
           placeholder={field.value}
           className="autocomplete"
-          apiKey={"AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro"}
+          apiKey={import.meta.env.VITE_api_key}
             onPlaceSelected={(place) => {
                 console.log(place)
                 document.getElementById(`stop${index}`).value=place.formatted_address;

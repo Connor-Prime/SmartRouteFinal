@@ -149,7 +149,7 @@ new Promise((resolve, reject)=>{
             style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:"1em",width:"90%",borderColor:"black", backgroundColor:"#FFFFFF",zIndex:"5"}}
             placeholder="Start Point"
             className="autocomplete"
-            apiKey={"AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro"}
+            apiKey={import.meta.env.VITE_api_key}
             onPlaceSelected={(place) => {
               // document.getElementById("start").value=place.formatted_address;
               setStart(place.formatted_address)
@@ -178,7 +178,7 @@ new Promise((resolve, reject)=>{
               onChange={(e) => {handleChange(index, e.target.value); }}
               style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:"1em",width:"90%",borderColor:"black", backgroundColor:"#FFFFFF",zIndex:"5"}}
               className="autocomplete"
-              apiKey={"AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro"}
+              apiKey={import.meta.env.VITE_api_key}
               placeholder="Add Stop"
               onPlaceSelected={(place) => {
               console.log(place)

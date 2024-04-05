@@ -43,7 +43,7 @@ async function geocodeAddress() {
   }
 
   // Replace 'YOUR_API_KEY' with your actual API key
-  const apiKey = 'AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro';
+  const apiKey = import.meta.env.VITE_api_key;
   const apiUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
 
   try {

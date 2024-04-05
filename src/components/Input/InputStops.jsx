@@ -8,7 +8,6 @@ import {getRouteTime, getFullRouteTime, getFullRouteTimeMinutes} from "../../scr
 import { wait } from "../../scripts/utils";
 // const ResponsesContext = createContext(null)
 // import { initAutocomplete,initAutocompleteAllFields } from "../../scripts/autocomplete";s
-
 import Autocomplete from "react-google-autocomplete";
 import NavBar from "../navbar";
 
@@ -118,11 +117,12 @@ new Promise((resolve, reject)=>{
       sessionStorage.setItem("transitMode", false)
     }
   }
+
   return (
     <div>
       <NavBar/>
     <div style={{borderRadius: '10%'}}>
-          <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro&libraries=places"></script>
+          <script async src={`https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_api_key}&libraries=places`}></script>
           <h5 className="topText" style={{fontSize:"2em", marginTop:".5em"}}>Edit Route </h5>
           <h5 className="topText" style={{fontSize:"1.2em"}}>Mix and match stops -
             <br></br>
@@ -152,7 +152,7 @@ new Promise((resolve, reject)=>{
             style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:"1em",width:"90%",borderColor:"black", backgroundColor:"#FFFFFF",zIndex:"5"}}
             placeholder={(startpoint==null)?"Start Point":startpoint}
             className="autocomplete"
-            apiKey={"AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro"}
+            apiKey={import.meta.env.VITE_api_key}
             onPlaceSelected={(place) => {
               // document.getElementById("start").value=place.formatted_address;
               setStart(place.formatted_address)
@@ -181,7 +181,7 @@ new Promise((resolve, reject)=>{
               onChange={(e) => {handleChange(index, e.target.value); }}
               style={{outlineColor:"black",borderRadius:".5em",fontSize:"1.5em",padding:"1em",width:"90%",borderColor:"black", backgroundColor:"#FFFFFF",zIndex:"5"}}
               className="autocomplete"
-              apiKey={"AIzaSyDbUVVfWx2Ghaty0_o6toUor2W2UZLH1ro"}
+              apiKey={import.meta.env.VITE_api_key}
               placeholder={(field.value=="")?null:field.value}
               onPlaceSelected={(place) => {
               console.log(place)
